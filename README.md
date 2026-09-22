@@ -24,3 +24,41 @@ if response.status_code == 200:
     print("🎉 爬取成功！資料已儲存為 hockey_teams.xlsx")
 else:
     print(f"❌ 爬取失敗，伺服器狀態碼：{response.status_code}")
+
+
+#課堂練習3
+
+import pandas as pd
+import cloudscraper
+from io import StringIO
+
+url = "https://rate.bot.com.tw/xrt?Lang=zh-TW"
+
+# 建立一個具有突破防護能力的爬蟲物件
+print("建立突破防護的連線...")
+scraper = cloudscraper.create_scraper() 
+
+print("正在連線至臺灣銀行網站...")
+response = scraper.get(url)
+
+if response.status_code == 200:
+    html_data = StringIO(response.text)
+    
+    try:
+        # 嘗試解析表格
+        dfs = pd.read_html(html_data)
+        
+        # 臺灣銀行的匯率表是網頁中的第一個表格
+        df = dfs[0] 
+        
+        # 存檔
+        file_name = '20260922.xlsx'
+        df.to_excel(file_name, index=False)
+        print(f"🎉 爬取成功！資料已儲存為 {file_name}")
+        
+    except ValueError:
+        print("❌ 找不到表格！防火牆依然擋住了請求。")
+else:
+    print(f"❌ 爬取失敗，伺服器狀態碼：{response.status_code}")   
+
+    #註:無法攻破台灣銀行防火牆讀取
