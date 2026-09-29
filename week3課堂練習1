@@ -1,0 +1,7 @@
+PS D:\A141E173> & C:/Users/owner/anaconda3/python.exe d:/A141E173/practice.py
+[Response] 狀態碼=200 OK
+[Response] Content-Type=text/html; charset=utf-8
+[Response] 編碼=utf-8
+[Response] 花費秒數=1.206786
+[Response] User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+PS D:\A141E173> 
