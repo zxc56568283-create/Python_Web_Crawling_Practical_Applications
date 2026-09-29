@@ -1,0 +1,5 @@
+2026-09-29 20:41:48,172 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): www.scrapethissite.com:443
+2026-09-29 20:41:49,076 [DEBUG] urllib3.connectionpool: https://www.scrapethissite.com:443 "GET /pages/forms/ HTTP/1.1" 200 None
+2026-09-29 20:41:49,387 [INFO] root: 狀態碼=200, 網址=https://www.scrapethissite.com/pages/forms/
+2026-09-29 20:41:49,407 [INFO] root: 寫入 25 筆資料
+2026-09-29 20:41:49,407 [INFO] root: 已存檔至 : D:\A141E173\output.csv
